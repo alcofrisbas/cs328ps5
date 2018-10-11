@@ -1,4 +1,5 @@
 import math
+
 def calc_output(x1, weights):
     """
     calculates the output of the given neural
@@ -15,11 +16,11 @@ def calc_output(x1, weights):
 
 def sum_squared_error(inOuts, weights):
     SSE = 0
-    for each i in inOuts:
+    for i in inOuts:
         start = i[0]
         y = i[1]
         gWx = calc_output(start, weights)
-        squaredError = (y-gWx)^2
+        squaredError = (y-gWx)**2
         SSE += squaredError
     return SSE
 
