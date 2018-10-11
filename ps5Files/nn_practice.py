@@ -23,11 +23,11 @@ def sum_squared_error(inOuts, weights):
         SSE += squaredError
     return SSE
 
-import pandas as pd
-results = []
-for w1 in range(-5,6):
-    for w2 in range(-5,6):
-        err = {'w1':w1, 'w2':w2, SSE = sum_squared_error(((0,1),(1,0)), weights)}
-        results.append(err)
+# import pandas as pd
+# results = []
+# for w1 in range(-5,6):
+#     for w2 in range(-5,6):
+#         err = {'w1':w1, 'w2':w2, SSE = sum_squared_error(((0,1),(1,0)), weights)}
+#         results.append(err)
 
-results = pd.from_dict(results)
+# results = pd.from_dict(results)
