@@ -32,3 +32,5 @@ def sum_squared_error(inOuts, weights):
 #         results.append(err)
 
 # results = pd.from_dict(results)
+def compute_w2_update():
+    pass
