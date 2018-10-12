@@ -37,5 +37,11 @@ def compute_w2_update(IN, target, weights, rate):
     delta = error * deriv
     return rate*delta*x2
 
+
+#TODO
 def compute_w1_update(IN, target, weights, rate):
-    pass
+    error = target - calc_output(IN, weights)
+    x2 = g(weights[0]*IN)
+    deriv = gprime(IN)*gprime(x2*weights[1])
+    delta = error * deriv
+    return rate*delta*x2
