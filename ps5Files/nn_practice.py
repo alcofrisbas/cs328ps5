@@ -31,17 +31,28 @@ def sum_squared_error(inOuts, weights):
     return SSE
 
 def compute_w2_update(IN, target, weights, rate):
+    
     x2 = g(weights[0]*IN)
+    x3 = g(x2*weights[1])
+    
     error = target - calc_output(IN, weights)
     deriv = gprime(x2*weights[1])
     delta = error * deriv
+    
     return rate*delta*x2
 
 
-#TODO
+###########################################################
+
+#TODO This isn't working... at least, I don't think it is
 def compute_w1_update(IN, target, weights, rate):
-    error = target - calc_output(IN, weights)
     x2 = g(weights[0]*IN)
-    deriv = gprime(IN)*gprime(x2*weights[1])
+    x3 = g(x2*weights[1])
+    
+    error = target - calc_output(IN, weights)
+    deriv = gprime(IN*weights[0])
     delta = error * deriv
-    return rate*delta*x2
+    
+    return rate*delta*IN
+
+
